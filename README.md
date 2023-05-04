@@ -11,6 +11,12 @@ Titolo
 Titolo Originale
 Lingua
 Voto
+## Procedimento
+1. Markup;
+2. Dopo aver creato il file store.js, inserisco all'interno la chiamata API per la ricerca, un searchInput come stringa vuota e un userMovie come array vuoto;
+3. All'input creo un v-model che sarà uguale al searchInput, cioè a ciò che scriverà l'utente, e un'emit per effettuare la chiamata API nell'app quando l'utente premerà INVIO, e faccio la stessa cosa per il bottone
+4. Creati due nuovi componenti che sono Cards e CardsContainer, andrò a stampare a schermo i risultati;
+5. Nel Cards farò una props in cui salverò le chiavi che mi servono che fanno parte dell'array nell'apiUrl, e nel CardsContainer farò un v-for in cui passerò varie chiavi dinamiche, e cosi stamperò a schermo
 
 Milestone 2:
 Trasformiamo la stringa statica della lingua in una vera e propria bandiera della nazione corrispondente, gestendo il caso in cui non abbiamo la bandiera della nazione ritornata dall’API (le flag non ci sono in FontAwesome).

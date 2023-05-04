@@ -1,0 +1,14 @@
+@use './partials/utilities' as *;
+@use './partials/vars' as *;
+
+@import 'bootstrap/scss/bootstrap';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
