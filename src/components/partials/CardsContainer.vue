@@ -26,7 +26,7 @@ export default {
         :original_language="result.original_language"
         :vote_average="result.vote_average"
         />
-
+        
         <Cards v-for="serie in store.userSeries.results"
         :key="serie.id"
         :image="serie.poster_path"

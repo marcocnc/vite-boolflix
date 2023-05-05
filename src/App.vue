@@ -29,7 +29,7 @@ export default {
                 console.log('store.userMovie', store.userMovie);
             })
         },
-
+        
         getApiPopularMovies(){
             axios.get(store.apiUrlPopularMovies)
             .then(res =>{
@@ -46,7 +46,6 @@ export default {
             .then(result =>{
                 store.userSeries = result.data;
                 console.log('store.userSeries', store.userSeries);
-                console.log('result.data.results', result.data.results);
             })
         }
     },
@@ -60,7 +59,7 @@ export default {
 
 <template>
 
- <Header @search="getApiMovies()" @enter="getApiMovies()" @enterSeries="getApiSeries()" @serie="getApiSeries()"/>
+ <Header @enter="getApiMovies()" @enterSeries="getApiSeries()"/>
 
   <Main />
 
