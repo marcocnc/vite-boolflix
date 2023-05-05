@@ -12,4 +12,6 @@ export const store = reactive ({
     searchInput: '',
     
     userMovie: []
+
+    
 })
