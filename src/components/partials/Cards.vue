@@ -4,6 +4,7 @@ export default {
     name: 'Cards',
     props:{
         title: String,
+        image: String,
         original_title: String,
         original_language: String,
         vote_average: Number
@@ -13,18 +14,20 @@ export default {
 
 <template>
     <ul>
+        <li>
+            <img class="poster" :src="`http://image.tmdb.org/t/p/w342/${image}`">
+        </li>
         <li>{{ title }}</li>
         <li>{{ original_title }}</li>
         <li>
-            <!-- <img :src="/public/img/original_language.png"> -->
-            <img :src="`/public/img/flags/language-${original_language}.svg`" :alt="original_language">
+            <img class="flag" :src="`/public/img/flags/language-${original_language}.svg`" :alt="original_language">
         </li>
         <li>{{ vote_average }}</li>
     </ul>
 </template>
 
 <style lang="scss" scoped>
-    img{
+    .flag{
         width: 40px;
     }
 </style>

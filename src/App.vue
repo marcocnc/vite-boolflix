@@ -46,6 +46,7 @@ export default {
             .then(result =>{
                 store.userSeries = result.data;
                 console.log('store.userSeries', store.userSeries);
+                console.log('result.data.results', result.data.results);
             })
         }
     },

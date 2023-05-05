@@ -19,6 +19,7 @@ export default {
   <div class="container">
     <div class="cards-wrapper d-flex flex-wrap">
         <Cards v-for="result in store.userMovie.results"
+
         :key="result.id"
         :title="result.title"
         :original_title="result.original_title"
@@ -28,6 +29,7 @@ export default {
 
         <Cards v-for="serie in store.userSeries.results"
         :key="serie.id"
+        :image="serie.poster_path"
         :title="serie.name"
         :original_title="serie.original_name"
         :original_language="serie.original_language"
