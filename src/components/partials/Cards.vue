@@ -14,7 +14,7 @@ export default {
         original_title: String,
         original_language: String,
         vote_average: Number
-    }
+    },
 }
 </script>
 
@@ -29,7 +29,12 @@ export default {
         <li>
             <img class="flag" :src="`/public/img/flags/language-${original_language}.svg`" :alt="original_language">
         </li>
-        <li v-for="star in store.numStars" :key="star"><i class="fa-regular fa-star"></i></li>
+        <li >
+            <!--  se star <= votoaverage allora stampo stellina piena
+             altrimenti stellina vuota  -->
+            <i v-for="star in vote_average" :key="star" class="fa-solid fa-star"></i>
+            <i v-for="star in (5 - vote_average)" :key="star" class="fa-regular fa-star"></i>
+        </li>
     </ul>
 </template>
 

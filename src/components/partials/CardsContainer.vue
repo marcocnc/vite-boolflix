@@ -24,7 +24,7 @@ export default {
         :title="movie.title"
         :original_title="movie.original_title"
         :original_language="movie.original_language"
-        :vote_average="movie.vote_average"
+        :vote_average="Math.ceil(movie.vote_average/2)"
         />
         
         <Cards v-for="serie in store.userSeries.results"
