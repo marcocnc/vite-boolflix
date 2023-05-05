@@ -7,7 +7,7 @@ export default {
         original_title: String,
         original_language: String,
         vote_average: Number
-    }
+    },
 }
 </script>
 

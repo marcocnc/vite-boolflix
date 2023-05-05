@@ -17,17 +17,14 @@ export default {
     },
 
     methods:{
-        getApi(){
+        getApiMovies(){
             console.log(store.searchInput);
-            axios.get(store.apiUrl, {
+            axios.get(store.apiUrlMovies, {
                 params:{
-                    num: store.numFilms,
-                    offset: store.offset,
                     query: store.searchInput
                 }
             })
             .then(result =>{
-                console.log(result.data);
                 store.userMovie = result.data;
                 console.log('store.userMovie', store.userMovie);
             })
@@ -37,20 +34,32 @@ export default {
             axios.get(store.apiUrlPopularMovies)
             .then(res =>{
                 store.popularMovies = res.data.results;
-                console.log('store.popularMovies', store.popularMovies);
+            })
+        },
+
+        getApiSeries(){
+            axios.get(store.apiUrlSeries, {
+                params:{
+                    query: store.searchInput
+                }
+            })
+            .then(result =>{
+                store.userSeries = result.data;
+                console.log('store.userSeries', store.userSeries);
             })
         }
     },
 
-    mounted(){
-        this.getApiPopularMovies()
-    }
+    // mounted(){
+    //     this.getApiPopularMovies(),
+    //     this.getApiSeries()
+    // }
 }
 </script>
 
 <template>
 
- <Header @search="getApi()" @enter="getApi()"/>
+ <Header @search="getApiMovies()" @enter="getApiMovies()" @enterSeries="getApiSeries()" @serie="getApiSeries()"/>
 
   <Main />
 

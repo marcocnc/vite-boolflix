@@ -21,8 +21,8 @@ export default {
 
             <!-- Research -->
             <div class="input-search d-flex align-items-center">
-                <input type="text" placeholder="Ricerca..." class="me-3 p-1 rounded" v-model="store.searchInput" @keyup.enter="$emit('enter')">
-                <div class="btn btn-primary text-white" @click="$emit('search')">Search</div>
+                <input type="text" placeholder="Ricerca..." class="me-3 p-1 rounded" v-model="store.searchInput" @keyup.enter="$emit('enter,'), $emit('enterSeries')">
+                <div class="btn btn-primary text-white" @click="$emit('search'), $emit('serie')">Search</div>
             </div>
         </header>
     </div>

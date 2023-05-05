@@ -23,7 +23,15 @@ export default {
         :title="result.title"
         :original_title="result.original_title"
         :original_language="result.original_language"
-        :vote_average="result.vote_average"/>
+        :vote_average="result.vote_average"
+        />
+
+        <Cards v-for="serie in store.userSeries.results"
+        :key="serie.id"
+        :title="serie.name"
+        :original_title="serie.original_name"
+        :original_language="serie.original_language"
+        :vote_average="serie.vote_average"/>
   </div>
     </div>
     
