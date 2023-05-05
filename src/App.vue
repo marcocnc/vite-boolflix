@@ -31,12 +31,20 @@ export default {
                 store.userMovie = result.data;
                 console.log('store.userMovie', store.userMovie);
             })
+        },
+
+        getApiPopularMovies(){
+            axios.get(store.apiUrlPopularMovies)
+            .then(res =>{
+                store.popularMovies = res.data.results;
+                console.log('store.popularMovies', store.popularMovies);
+            })
         }
     },
 
-    // mounted(){
-    //     this.getApi()
-    // }
+    mounted(){
+        this.getApiPopularMovies()
+    }
 }
 </script>
 

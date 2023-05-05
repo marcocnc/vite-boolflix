@@ -7,6 +7,8 @@ export const store = reactive ({
 
     apiUrlPopularMovies: 'https://api.themoviedb.org/3/movie/popular?api_key=3dcd17509fe8c713db00f7cbb5012046',
 
+    popularMovies : [],
+
     searchInput: '',
     
     userMovie: []
