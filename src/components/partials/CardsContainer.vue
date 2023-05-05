@@ -18,13 +18,13 @@ export default {
 <template>
   <div class="container">
     <div class="cards-wrapper d-flex flex-wrap">
-        <Cards v-for="result in store.userMovie.results"
-
-        :key="result.id"
-        :title="result.title"
-        :original_title="result.original_title"
-        :original_language="result.original_language"
-        :vote_average="result.vote_average"
+        <Cards v-for="movie in store.userMovie.results"
+        :key="movie.id"
+        :image="movie.poster_path"
+        :title="movie.title"
+        :original_title="movie.original_title"
+        :original_language="movie.original_language"
+        :vote_average="movie.vote_average"
         />
         
         <Cards v-for="serie in store.userSeries.results"
@@ -33,7 +33,7 @@ export default {
         :title="serie.name"
         :original_title="serie.original_name"
         :original_language="serie.original_language"
-        :vote_average="serie.vote_average"/>
+        :vote_average="Math.ceil(serie.vote_average/2)"/>
   </div>
     </div>
     

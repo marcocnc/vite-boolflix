@@ -21,7 +21,10 @@ export default {
 @use '../scss/partials/vars' as *;
 
     .main-wrapper{
-        height: 100vh;
-        background-color: $bg_color;
+        height: 100%;
+        
+        main{
+            height: 100%;
+        }
     }
 </style>
