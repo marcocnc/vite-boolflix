@@ -25,7 +25,7 @@ export default {
                 }
             })
             .then(result =>{
-                store.userMovie = result.data;
+                store.userMovie = result.data.results;
                 console.log('store.userMovie', store.userMovie);
             })
         },
@@ -33,7 +33,7 @@ export default {
         getApiPopularMovies(){
             axios.get(store.apiUrlPopularMovies)
             .then(res =>{
-                store.popularMovies = res.data.results;
+                store.popularMovies = res.data;
             })
         },
 
@@ -44,7 +44,7 @@ export default {
                 }
             })
             .then(result =>{
-                store.userSeries = result.data;
+                store.userSeries = result.data.results;
                 console.log('store.userSeries', store.userSeries);
             })
         }

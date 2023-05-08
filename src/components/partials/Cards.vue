@@ -21,7 +21,7 @@ export default {
 
 <template>
 
-    <div class="my-card mt-5">
+    <div class="my-card mt-3">
 
         <!-- Card Image -->
         <div class="card-image">
