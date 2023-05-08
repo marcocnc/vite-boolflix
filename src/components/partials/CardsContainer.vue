@@ -23,6 +23,7 @@ export default {
         :image="movie.poster_path"
         :title="movie.title"
         :original_title="movie.original_title"
+        :desc="movie.overview"
         :original_language="movie.original_language"
         :vote_average="Math.ceil(movie.vote_average/2)"
         />
@@ -32,6 +33,7 @@ export default {
         :image="serie.poster_path"
         :title="serie.name"
         :original_title="serie.original_name"
+        :desc="serie.overview"
         :original_language="serie.original_language"
         :vote_average="Math.ceil(serie.vote_average/2)"/>
   </div>

@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <div class="main-wrapper">
+  <div class="main-wrapper pb-5">
     <main>
         <CardsContainer />
     </main>
