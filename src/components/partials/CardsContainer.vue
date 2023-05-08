@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div class="container">
-    <div class="cards-wrapper d-flex flex-wrap">
+    <div class="cards-wrapper d-flex flex-wrap mt-5">
         <Cards v-for="movie in store.userMovie.results"
         :key="movie.id"
         :image="movie.poster_path"

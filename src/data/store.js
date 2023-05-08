@@ -10,7 +10,7 @@ export const store = reactive ({
 
     popularMovies : [],
 
-    searchInput: '',
+    searchInput: 'harry potter',
 
     userMovie: [],
     userSeries: []
