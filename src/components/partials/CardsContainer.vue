@@ -16,9 +16,34 @@ export default {
 </script>
 
 <template>
+
   <div class="cards-wrapper">
+
     <div class="container">
-        <h2 v-if="store.userMovie.length > 0" class="text-white mt-3 p-2">MOVIE</h2>
+
+        <h3 v-if="store.userMovie.length > 0 || store.userSeries.length > 0" 
+            class=" text-center text-white mt-2">Ecco i risultati della tua ricerca:
+        </h3>
+
+        <h2 class="text-white mt-3 p-2">MOVIE</h2>
+
+        <!-- Popular Movies -->
+        <div v-if="store.userMovie.length == 0" class="popular-movies">
+            <h3 class="text-white mt-2"> I PIÙ POPOLARI</h3>
+            <div class="card-popular d-flex flex-wrap">
+                <Cards  v-for="film in store.popularMovies"
+                :key="film.id"
+                :image="film.poster_path"
+                :title="film.title"
+                :original_title="film.original_title"
+                :desc="film.overview"
+                :original_language="film.original_language"
+                :vote_average="Math.ceil(film.vote_average/2)"
+                />
+            </div>
+        </div>
+
+        <!-- Movies -->
         <div class="movies d-flex flex-wrap">
             <Cards v-for="movie in store.userMovie"
             :key="movie.id"
@@ -31,6 +56,7 @@ export default {
             />
         </div>
 
+        <!-- Series -->
         <h2 v-if="store.userSeries.length > 0" class="text-white mt-5 p-2">SERIE TV</h2>
         <div class="tv-series d-flex flex-wrap">
             <Cards v-for="serie in store.userSeries"
@@ -53,6 +79,7 @@ export default {
 
     h2{
         background-color: #0000007b;
+        color: white;
     }
     
 </style>

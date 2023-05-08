@@ -26,14 +26,14 @@ export default {
             })
             .then(result =>{
                 store.userMovie = result.data.results;
-                console.log('store.userMovie', store.userMovie);
             })
         },
         
         getApiPopularMovies(){
             axios.get(store.apiUrlPopularMovies)
             .then(res =>{
-                store.popularMovies = res.data;
+                store.popularMovies = res.data.results;
+                console.log(store.popularMovies.results);
             })
         },
 
@@ -45,15 +45,13 @@ export default {
             })
             .then(result =>{
                 store.userSeries = result.data.results;
-                console.log('store.userSeries', store.userSeries);
             })
         }
     },
 
-    // mounted(){
-    //     this.getApiPopularMovies(),
-    //     this.getApiSeries()
-    // }
+    mounted(){
+        this.getApiPopularMovies();
+    }
 }
 </script>
 

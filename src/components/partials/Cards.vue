@@ -29,15 +29,18 @@ export default {
             <img  class="poster w-100" v-else :src="`http://image.tmdb.org/t/p/w342/${image}`">
         </div>
 
+        <!-- Card desc -->
         <div class="card-desc d-flex flex-column h-100 w-100 p-2">
-            <span class="fw-bold">{{ title.toUpperCase() }}</span>
+            <span class="fw-bold">{{ title }}</span>
             <span class="original-title">{{ original_title }}</span>
             <span class="film-desc">"{{ desc }}"</span>
 
+            <!-- Country flag -->
             <div class="flag-img d-flex justify-content-center my-2">
                 <img class="flag" :src="`/public/img/flags/language-${original_language}.svg`" :alt="original_language">
             </div>
 
+            <!-- Rate stars -->
             <div class="rate d-flex justify-content-center mt-3">
                 <i v-for="star in vote_average" :key="star" class="fa-solid fa-star"></i>
                 <i v-for="star in (5 - vote_average)" :key="star" class="fa-regular fa-star"></i>
@@ -56,13 +59,12 @@ export default {
         position: relative;
 
         
-        
+        // Flag Style
         .flag{
             width: 40px;
-
-        
         }
 
+         // Image
         .card-image,
         .error{
             height: 100%;
@@ -81,6 +83,7 @@ export default {
             }
         }
 
+        // Desc
         .card-desc{
             background-color: #00000079;
             position: absolute;
@@ -91,6 +94,7 @@ export default {
 
             &:hover{
                 opacity: 1;
+                transition: all .2s;
             }
         }
 
